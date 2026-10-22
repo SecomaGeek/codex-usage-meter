@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77,<81", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-usage-meter"
+version = "0.3.0"
+description = "A compact, unofficial read-only Codex usage meter for Windows"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{name = "SecomaGeek"}]
+dependencies = []
+classifiers = ["Operating System :: Microsoft :: Windows", "Programming Language :: Python :: 3", "Topic :: Desktop Environment"]
+
+[project.optional-dependencies]
+build = ["pyinstaller==6.16.0"]
+
+[project.scripts]
+codex-usage-meter = "codex_usage_meter.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+codex_usage_meter = ["*.ico", "*.png"]
